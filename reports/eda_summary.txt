@@ -1,0 +1,58 @@
+SALES PERFORMANCE ANALYSIS - EDA SUMMARY
+=======================================================
+
+Dataset: superstore_cleaned.csv
+Final dataset shape: (10194, 21)
+Exact duplicate rows found: 0
+Total sales: 2326534.35
+Total profit: 292296.81
+Unique orders: 5111
+Total quantity: 38654
+Average order value: 455.20
+Profit margin: 12.56%
+
+Missing values before duplicate removal:
+No missing values found.
+
+Descriptive statistics:
+          sales  quantity  discount    profit
+count  10194.00  10194.00  10194.00  10194.00
+mean     228.23      3.79      0.16     28.67
+std      619.91      2.23      0.21    232.47
+min        0.44      1.00      0.00  -6599.98
+25%       17.22      2.00      0.00      1.76
+50%       53.91      3.00      0.20      8.69
+75%      209.50      5.00      0.20     29.30
+max    22638.48     14.00      0.80   8399.98
+
+Correlation matrix:
+          sales  quantity  discount  profit
+sales     1.000     0.198    -0.028   0.481
+quantity  0.198     1.000     0.007   0.066
+discount -0.028     0.007     1.000  -0.219
+profit    0.481     0.066    -0.219   1.000
+
+Potential outliers:
+  column      q1         q3  lower_bound  upper_bound  outlier_count  outlier_percentage
+   sales 17.2200 209.500000  -271.200000   497.920000           1183               11.60
+quantity  2.0000   5.000000    -2.500000     9.500000            175                1.72
+discount  0.0000   0.200000    -0.300000     0.500000            874                8.57
+  profit  1.7608  29.297925   -39.544887    70.603612           1913               18.77
+
+Preliminary business insights:
+1. Highest-sales category: Technology (839,893.28 in sales).
+2. Highest-profit category: Technology.
+3. Lowest-profit category: Furniture; review its costs, discounts and product mix.
+4. Highest-sales region: West.
+5. Discount-profit correlation: -0.219. Correlation does not by itself prove causation.
+6. Highest-sales month: 2026-11 (118,454.51).
+
+
+Visualizations saved:
+01_sales_by_category.png
+02_profit_by_category.png
+03_monthly_sales_trend.png
+04_sales_by_region.png
+05_discount_vs_profit.png
+06_correlation_heatmap.png
+07_profit_distribution.png
